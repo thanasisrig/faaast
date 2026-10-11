@@ -418,3 +418,4 @@ p, dd, li { text-wrap: pretty; }
 .nav-logo { justify-self: start; }
 .nav > .btn { justify-self: end; }
 @media (max-width: 900px) { .nav { grid-template-columns: 1fr auto; } }
+.hero-title { font-size: clamp(44px, 8.6vw, 116px); }
