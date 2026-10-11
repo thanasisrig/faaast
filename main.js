@@ -139,11 +139,52 @@
     </div>`;
   };
 
+
+  // The Me tab: records, then weight. Weigh-ins over 30 days, kg.
+  const WEIGHTS = [86.3, 86.1, 86.2, 85.9, 85.8, 85.9, 85.6, 85.5, 85.6, 85.3, 85.2, 85.1, 85.0, 84.8];
+  const meScreen = () => {
+    const W = 290, H = 130, lo = 79, hi = 87;
+    const X = (i) => 6 + (i * (W - 12)) / (WEIGHTS.length - 1);
+    const Y = (kg) => 8 + ((hi - kg) / (hi - lo)) * (H - 16);
+    const line = WEIGHTS.map((kg, i) => `${i ? 'L' : 'M'}${X(i).toFixed(1)} ${Y(kg).toFixed(1)}`).join(' ');
+    const dots = WEIGHTS.map((kg, i) => `<circle class="dot" data-i="${i}" cx="${X(i).toFixed(1)}" cy="${Y(kg).toFixed(1)}" r="${i === WEIGHTS.length - 1 ? 5 : 3.5}" fill="${i === WEIGHTS.length - 1 ? '#111' : '#8A8A8A'}" opacity="0"/>`).join('');
+    const stat = (k, v, unit, sub) => `<div class="me-stat"><small>${k}</small><b><span data-count="${v}">0</span>${unit ? `<i>${unit}</i>` : ''}</b><span>${sub}</span></div>`;
+    return `
+    <div class="app">
+      <div class="me-scroll" data-mescroll>
+        <div class="me-title">Me</div>
+        <div class="me-k" style="top:180px">YOUR FASTS</div>
+        <div class="me-stats">
+          ${stat('AVERAGE FAST', 18, 'h', 'Over 51 fasts')}
+          ${stat('LONGEST FAST', 76, 'h', 'Sat 26 Sep 2026')}
+          ${stat('TOTAL FASTS', 51, '', 'Since 15 Aug 2026')}
+          ${stat('TOTAL HOURS', 888, 'h', 'About 37 days')}
+        </div>
+        <div class="me-k" style="top:502px">WEIGHT</div>
+        <div class="me-weight">
+          <div class="me-w-top"><span>LATEST · TODAY, 7:50 AM</span><b>Log +</b></div>
+          <div class="me-w-big"><b>84.8<i>kg</i></b><div><span class="trend" data-trend>↓ 1.5 kg</span><span>in 30 days</span></div></div>
+          <svg class="me-chart" viewBox="0 0 ${W + 30} ${H + 18}">
+            <line x1="0" x2="${W}" y1="${Y(85)}" y2="${Y(85)}" stroke="#E5E5E5"/><text x="${W + 6}" y="${Y(85) + 4}" font-size="12" fill="#707070">85</text>
+            <line x1="0" x2="${W}" y1="${Y(80)}" y2="${Y(80)}" stroke="#248A3D" stroke-dasharray="5 5" stroke-width="1.5"/><text x="${W + 6}" y="${Y(80) + 4}" font-size="12" fill="#707070">80</text>
+            <text x="4" y="${Y(80) - 6}" font-size="12" font-weight="600" fill="#248A3D">Goal 80.0</text>
+            <path data-wline d="${line}" pathLength="100" fill="none" stroke="#111" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="100" stroke-dashoffset="100"/>
+            ${dots}
+          </svg>
+          <div class="me-axis"><span>7 Sep</span><span>22 Sep</span><span>Today</span></div>
+          <div class="me-w-foot"><span>4.8 kg to your goal</span><div class="seg"><span>7 days</span><span>Month</span></div></div>
+        </div>
+      </div>
+      ${statusBar.replace('class="sb"', 'class="sb me-sb"')}
+      ${tabbar('me')}
+    </div>`;
+  };
+
   // ---------- Mount ----------
   const screens = {};
   $$('[data-app]').forEach((scr) => {
     const kind = scr.dataset.app;
-    scr.innerHTML = kind === 'tracking' ? trackingScreen() : kind === 'styles' ? homeScreen(stylesTimer()) : homeScreen(blocksTimer());
+    scr.innerHTML = kind === 'tracking' ? trackingScreen() : kind === 'me' ? meScreen() : kind === 'styles' ? homeScreen(stylesTimer()) : homeScreen(blocksTimer());
     screens[kind] = scr.firstElementChild;
   });
 
@@ -282,6 +323,7 @@
   const stylesSec = $('#styles'), styleItems = $$('.style-list li'), tsLayers = screens.styles ? $$('.ts', screens.styles) : [];
   const calWrap = $('#calPhoneWrap'), tDays = screens.tracking ? $$('.t-d', screens.tracking) : [];
   const darkCard = $('#darkCard'), wipe = $('.wipe');
+  const meCard = $('#meCard'), meScroll = screens.me && $('[data-mescroll]', screens.me);
   const cta = $('#download'), ctaBlocks = $('#ctaBlocks');
 
   // The story's fast: started yesterday at 7:30 PM.
@@ -359,6 +401,16 @@
         $('[data-tstats]', screens.tracking).innerHTML = `<b>${fasts}</b> fasts · <b>${hrs}h</b> · <b>${goals}</b> goal reached`;
         lastCal = n;
       }
+    }
+
+    // Me: the screen scrolls down to Weight, and the line draws towards the goal.
+    if (meCard && meScroll) {
+      const t = through(meCard);
+      meScroll.style.transform = `translateY(${-map(t, 0.3, 0.5, 0, 300)}px)`;
+      const q = map(t, 0.4, 0.58, 0, 1);
+      $('[data-wline]', screens.me).setAttribute('stroke-dashoffset', 100 - q * 100);
+      $$('.dot', screens.me).forEach((d) => d.setAttribute('opacity', q >= d.dataset.i / (WEIGHTS.length - 1) ? 1 : 0));
+      $('[data-trend]', screens.me).classList.toggle('on', q > 0.9);
     }
 
     // Light / dark wipe.

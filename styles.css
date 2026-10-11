@@ -123,7 +123,7 @@ a { color: inherit; }
 .card h3 { margin: 0 0 10px; font-size: clamp(26px, 2.6vw, 34px); line-height: 1.05; letter-spacing: -.035em; }
 .card-k { margin: 0 0 12px; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
 .card-t { margin: 0; color: var(--muted); font-size: 16px; max-width: 360px; }
-.card-records { grid-column: span 3; }
+.card-me { grid-column: span 3; display: flex; flex-direction: column; }
 .card-ach { grid-column: span 3; grid-row: span 2; display: flex; flex-direction: column; }
 .card-widgets { grid-column: span 3; }
 .card-photos, .card-dark, .card-recap { grid-column: span 2; display: flex; flex-direction: column; }
@@ -131,10 +131,6 @@ a { color: inherit; }
 .card-shot .phone { margin-bottom: -38%; }
 .card-ach .card-shot .phone { --w: min(300px, 70vw); margin-bottom: -22%; }
 .phone-mini { --w: min(240px, 62vw); }
-.records { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 6px 0 22px; }
-.records > div { background: var(--canvas); border-radius: 20px; padding: 16px 18px; }
-.records .big { display: block; font-size: clamp(40px, 4vw, 56px); font-weight: 700; letter-spacing: -.04em; line-height: 1; font-variant-numeric: tabular-nums; }
-.records small { display: block; margin-top: 6px; color: var(--muted); font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; }
 
 .widgets { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; margin: 18px 0 22px; }
 .wdg { background: var(--canvas); border-radius: 26px; padding: 18px; }
@@ -367,3 +363,31 @@ a { color: inherit; }
   .facts-list { padding: 4px 22px; }
   .facts-list > div { grid-template-columns: 1fr; gap: 4px; }
 }
+
+/* Me screen */
+.me-sb { background: var(--canvas); }
+.me-scroll { position: absolute; top: 0; left: 0; right: 0; will-change: transform; }
+.me-title { position: absolute; top: 118px; left: 20px; font-size: 36px; font-weight: 700; letter-spacing: -.03em; }
+.me-k { position: absolute; left: 20px; font-size: 13px; font-weight: 600; letter-spacing: .1em; color: var(--muted); }
+.me-stats { position: absolute; top: 208px; left: 16px; right: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.me-stat { background: var(--surface); border-radius: 20px; padding: 14px 16px 16px; }
+.me-stat small { display: block; font-size: 12px; font-weight: 600; letter-spacing: .08em; color: var(--muted); }
+.me-stat b { display: block; font-size: 40px; font-weight: 600; letter-spacing: -.03em; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.me-stat b i { font-style: normal; font-size: 22px; font-weight: 500; margin-left: 2px; }
+.me-stat span { font-size: 14px; color: var(--muted); }
+.me-weight { position: absolute; top: 530px; left: 16px; right: 16px; background: var(--surface); border-radius: 22px; padding: 16px 18px; }
+.me-w-top { display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; letter-spacing: .08em; color: var(--muted); }
+.me-w-top b { color: var(--ink); letter-spacing: 0; font-size: 15px; }
+.me-w-big { display: flex; justify-content: space-between; align-items: center; margin: 4px 0 10px; }
+.me-w-big b { font-size: 40px; font-weight: 600; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.me-w-big b i { font-style: normal; font-size: 20px; font-weight: 500; margin-left: 3px; }
+.trend { display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; border-radius: 999px; background: rgba(36,138,61,.14); color: #248A3D; font-size: 15px; font-weight: 600; opacity: 0; transform: scale(.8); transition: opacity .4s, transform .5s cubic-bezier(.3,1.6,.5,1); }
+.trend.on { opacity: 1; transform: none; }
+.trend + span { font-size: 15px; color: var(--muted); margin-left: 6px; }
+.me-chart { display: block; width: 100%; }
+.me-chart .dot { transition: opacity .3s; }
+.me-axis { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); padding-right: 30px; }
+.me-w-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; font-size: 15px; color: var(--muted); }
+.seg { display: inline-flex; background: var(--canvas); border-radius: 999px; padding: 3px; font-size: 13px; font-weight: 600; }
+.seg span { padding: 5px 10px; border-radius: 999px; }
+.seg span:first-child { background: var(--surface); color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,.1); }
