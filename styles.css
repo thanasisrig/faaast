@@ -399,3 +399,16 @@ a { color: inherit; }
 @media (max-width: 900px) { .style-more { display: none; } }
 h1, h2, h3, .stmt { text-wrap: balance; }
 p, dd, li { text-wrap: pretty; }
+
+/* Logo hover: the a's stretch out ("Faaaaaaast"), then tuck back in. */
+.nav-logo img { transition: transform .5s cubic-bezier(.3, 1.6, .5, 1); }
+.nav-logo:hover img, .nav-logo:focus-visible img { transform: rotate(-8deg) scale(1.08); }
+.wm { display: inline-flex; align-items: baseline; }
+.wm-x { display: inline-block; max-width: 0; opacity: 0; overflow: hidden; transform: translateY(-.35em);
+  transition: max-width .3s var(--ease), opacity .2s ease, transform .4s cubic-bezier(.3, 1.6, .5, 1);
+  transition-delay: calc((3 - var(--i)) * 35ms); }
+.nav-logo:hover .wm-x, .nav-logo:focus-visible .wm-x { max-width: .7em; opacity: 1; transform: none; transition-delay: calc(var(--i) * 55ms); }
+@media (prefers-reduced-motion: reduce) {
+  .nav-logo img, .wm-x { transition: none; }
+  .nav-logo:hover img { transform: none; }
+}
