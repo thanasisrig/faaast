@@ -6,9 +6,9 @@ App Store name: "Faaast: Fasting Tracker". Platform: iPhone. Language: English.
 
 ## Pages
 
-- [Home](https://faaast.arecon.eu/): what the app does, timer styles, features, privacy, Pro and FAQ
-- [Support](https://faaast.arecon.eu/support/): contact, restoring Pro, managing subscriptions, your data
-- [Privacy policy](https://faaast.arecon.eu/privacy/): what data the app handles and where it goes
+- [Home](https://faaastapp.com/): what the app does, timer styles, features, privacy, Pro and FAQ
+- [Support](https://faaastapp.com/support/): contact, restoring Pro, managing subscriptions, your data
+- [Privacy policy](https://faaastapp.com/privacy/): what data the app handles and where it goes
 
 ## Facts
 

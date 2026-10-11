@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://faaast.arecon.eu/sitemap.xml
+Sitemap: https://faaastapp.com/sitemap.xml
