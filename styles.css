@@ -374,7 +374,7 @@ a { color: inherit; }
 .me-stat small { display: block; font-size: 12px; font-weight: 600; letter-spacing: .08em; color: var(--muted); }
 .me-stat b { display: block; font-size: 40px; font-weight: 600; letter-spacing: -.03em; line-height: 1.15; font-variant-numeric: tabular-nums; }
 .me-stat b i { font-style: normal; font-size: 22px; font-weight: 500; margin-left: 2px; }
-.me-stat span { font-size: 14px; color: var(--muted); }
+.me-stat > span { font-size: 14px; color: var(--muted); }
 .me-weight { position: absolute; top: 530px; left: 16px; right: 16px; background: var(--surface); border-radius: 22px; padding: 16px 18px; }
 .me-w-top { display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; letter-spacing: .08em; color: var(--muted); }
 .me-w-top b { color: var(--ink); letter-spacing: 0; font-size: 15px; }
@@ -391,3 +391,11 @@ a { color: inherit; }
 .seg { display: inline-flex; background: var(--canvas); border-radius: 999px; padding: 3px; font-size: 13px; font-weight: 600; }
 .seg span { padding: 5px 10px; border-radius: 999px; }
 .seg span:first-child { background: var(--surface); color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+
+.style-more { margin: 16px 0 0; font-size: 15px; color: var(--muted); }
+.step-n .pro { margin-left: 6px; vertical-align: 1px; }
+.cta .lead { margin-top: -8px; }
+.aside { margin: 40px auto 0; font-size: 15px; color: var(--muted); }
+@media (max-width: 900px) { .style-more { display: none; } }
+h1, h2, h3, .stmt { text-wrap: balance; }
+p, dd, li { text-wrap: pretty; }
