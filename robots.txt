@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://faaast.arecon.eu/sitemap.xml
