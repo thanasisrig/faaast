@@ -355,3 +355,15 @@ a { color: inherit; }
   .cta-blocks { grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); gap: 6px; }
   .cta-blocks i { border-radius: 9px; }
 }
+
+/* Facts */
+.facts { padding-top: 0; }
+.facts-list { margin: 40px 0 0; background: var(--surface); border-radius: 32px; padding: 8px 32px; }
+.facts-list > div { display: grid; grid-template-columns: 160px 1fr; gap: 24px; padding: 20px 0; border-top: 1px solid var(--line); }
+.facts-list > div:first-child { border-top: 0; }
+.facts-list dt { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
+.facts-list dd { margin: 0; font-size: 17px; }
+@media (max-width: 600px) {
+  .facts-list { padding: 4px 22px; }
+  .facts-list > div { grid-template-columns: 1fr; gap: 4px; }
+}
