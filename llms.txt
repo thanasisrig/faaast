@@ -1,6 +1,6 @@
 # Faaast
 
-> Faaast is an intermittent fasting tracker for iPhone. Start a fast in one tap, watch each hour fill as a block, and see every fast on a calendar. Free, with an optional Faaast Pro. No account and no ads. Fasts, weight and photos stay on the iPhone, and in the user's own iCloud only if they turn on backup.
+> Faaast is an intermittent fasting tracker for iPhone. Track your fasts, see your progress and build a routine that fits your life, with visual timers, a calendar of every fast and no account required. Free to use, no ads, optional Faaast Pro.
 
 App Store name: "Faaast: Fasting Tracker". Platform: iPhone. Language: English.
 App Store: https://apps.apple.com/app/id6818526484
@@ -32,6 +32,6 @@ App Store: https://apps.apple.com/app/id6818526484
 - Free: eight timer styles to choose from (five free: hour blocks, ticks, gauge, filling disc, digital), a calendar with streaks, records (average, longest, total hours, streaks), weekly goal, weight in kg, lb or stones, monthly or weekly progress photos, Home Screen and Lock Screen widgets, 62 achievements, weekly and monthly recap cards, light and dark mode, import from other fasting apps (CSV or JSON) and export.
 - Faaast Pro: fasting stages with alerts, water and electrolytes, weight chart and Apple Health sync, automatic iCloud backup, three extra timer styles (Flip clock, Countdown, Departure board), a progress photo every day.
 - Pro prices (euro): €39.99 a year, €5.99 a month, or €79.99 once. Other regions see local App Store prices.
-- Privacy: no account or sign-up, no ads, no data sold. Fasts, weight and photos stay on the iPhone. Progress photos stay on the iPhone and in the optional iCloud backup, are never part of an export file, and can be locked with Face ID. This website counts visits anonymously with PostHog, without cookies.
+- Privacy: no account or sign-up, no ads. Fasts, weight and photos stay on the iPhone, with optional backup to the user's own iCloud (Pro). Progress photos stay on the iPhone and in the optional iCloud backup, are never part of an export file, and can be locked with Face ID. This website counts visits anonymously with PostHog, without cookies.
 - Not medical advice. Fasting stages are typical timings and vary from person to person.
 - Contact: hi@arecon.eu
