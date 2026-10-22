@@ -10,6 +10,20 @@ App Store name: "Faaast: Fasting Tracker". Platform: iPhone. Language: English.
 - [Support](https://faaastapp.com/support/): contact, restoring Pro, managing subscriptions, your data
 - [Privacy policy](https://faaastapp.com/privacy/): what data the app handles and where it goes
 
+## Guides
+
+- [16:8 intermittent fasting, explained](https://faaastapp.com/guides/16-8-intermittent-fasting/): what 16:8 is, a sample day, what you can drink, how to start
+- [What happens when you fast, hour by hour](https://faaastapp.com/guides/what-happens-when-you-fast/): the stages from 0 to 72+ hours, typical timings, no autophagy claims
+- [A fasting app without an account](https://faaastapp.com/guides/fasting-app-without-account/): how Faaast keeps data on the iPhone, importing history from other apps
+
+## Who it's for
+
+- People new to fasting (start at 12:12, build up to 16:8)
+- People who don't want to create an account or see ads
+- People who like tracking progress: calendar, streaks, records, weight, progress photos
+- People doing longer fasts: 20:4, one meal a day (OMAD), 36 hours
+- Not a medical app; not for people who are pregnant or breastfeeding, under 18, have had an eating disorder, or take blood-sugar-lowering medicine without a doctor's advice
+
 ## Facts
 
 - Fasts: 16:8, 18:6, 20:4, OMAD, 12:12, 14:10, 36 hours, or any length.
