@@ -479,3 +479,12 @@ p, dd, li { text-wrap: pretty; }
   .g-table th, .g-table td { padding: 12px 14px; }
   .g-table td:first-child { white-space: normal; }
 }
+
+/* Guide citations */
+.cite { font-size: .62em; line-height: 0; margin-left: 1px; }
+.cite a { text-decoration: none; color: var(--muted); font-weight: 600; padding: 0 1px; }
+.cite a:hover { color: var(--ink); }
+.g-sources { margin: 8px 0 0; padding-left: 22px; font-size: 15px; line-height: 1.55; color: var(--muted); }
+.g-sources li { margin: 0 0 10px; padding-left: 4px; scroll-margin-top: 96px; }
+.g-sources li:target { color: var(--ink); }
+.g-sources a { color: var(--ink); font-weight: 500; }
