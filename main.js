@@ -76,7 +76,7 @@
       </div>
       <div class="a-btn" data-btn>End fast</div>
       ${tabbar('fast')}
-      <div class="toast" data-toast><span class="ok">✓</span><div><b>Fast saved · 19h 36m</b><span>Goal reached. It’s on your calendar.</span></div></div>
+      <div class="toast" data-toast><span class="ok">✓</span><div><b>Fast saved · 16 hours</b><span>It’s on your calendar.</span></div></div>
     </div>`;
 
   const gaugeSVG = () => {
@@ -221,7 +221,7 @@
     let cap;
     if (idle) cap = '<b>16:8</b> · 16 hours to go';
     else if (hours < GOAL) cap = `<b>${Math.floor(hours)}</b> of ${GOAL} hours · <b>${hm((GOAL - hours) * 60)}</b> to goal`;
-    else cap = `🔥 <b>${hm((hours - GOAL) * 60)}</b> past your goal`;
+    else cap = `<b>${GOAL}</b> of ${GOAL} hours · goal reached`;
     set('[data-cap]', cap, 'innerHTML');
   }
 
@@ -351,18 +351,18 @@
     // Story: scroll scrubs one fast from start to saved.
     if (story && screens.story) {
       const p = pinProgress(story);
-      const ended = p >= 0.87;
-      const idle = p < 0.12 || ended;
-      const hours = map(p, 0.12, 0.8, 0, 19.6);
+      const ended = p >= 0.8;
+      const idle = p < 0.2 || ended;
+      const hours = map(p, 0.2, 0.7, 0, GOAL); // stops at the goal: no flame blocks here
       renderHome(screens.story, {
         idle, hours: ended ? 0 : hours,
         startDay: 'Yesterday', startTime: timeFmt(storyStart),
         endDay: 'Today', endTime: timeFmt(storyEnd),
         ifEnd: 'Tomorrow<span>' + timeFmt(storyEnd) + '</span>',
-        press: (p > 0.085 && p < 0.12) || (p > 0.83 && p < 0.87),
+        press: (p > 0.16 && p < 0.2) || (p > 0.75 && p < 0.8),
         toast: ended,
       });
-      const step = p < 0.14 ? 0 : p < 0.4 ? 1 : p < 0.62 ? 2 : p < 0.84 ? 3 : 4;
+      const step = p < 0.22 ? 0 : p < 0.74 ? 1 : 2;
       if (step !== lastStep) {
         steps.forEach((s, i) => { s.classList.toggle('on', i === step); s.classList.toggle('past', i < step); });
         lastStep = step;

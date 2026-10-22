@@ -39,7 +39,7 @@
     clearTimeout(timers[id]);
     if (e.isIntersecting) timers[id] = setTimeout(() => { seen.add(id); track('section_viewed', { section: id }); }, 1000);
   }), { threshold: 0.35 });
-  ['how', 'styles', 'tracking', 'who', 'features', 'privacy', 'pro', 'facts', 'faq', 'download']
+  ['how', 'why', 'tracking', 'features', 'styles', 'privacy', 'pro', 'faq', 'download']
     .forEach((id) => { const el = document.getElementById(id); if (el) io.observe(el); });
 
   document.querySelectorAll('.faq details').forEach((d) => d.addEventListener('toggle', () => {
