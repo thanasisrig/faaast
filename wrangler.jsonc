@@ -1,0 +1,11 @@
+// Cloudflare hosting for faaastapp.com: a static site, served as Worker static
+// assets (free, no request limits for static files). No build step.
+{
+  "name": "faaast-website",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
