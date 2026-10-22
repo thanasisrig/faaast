@@ -3,9 +3,11 @@
 > Faaast is an intermittent fasting tracker for iPhone. Start a fast in one tap, watch each hour fill as a block, and see every fast on a calendar. Free, with an optional Faaast Pro. No account and no ads. Fasts, weight and photos stay on the iPhone, and in the user's own iCloud only if they turn on backup.
 
 App Store name: "Faaast: Fasting Tracker". Platform: iPhone. Language: English.
+App Store: https://apps.apple.com/app/id6818526484
 
 ## Pages
 
+- [Faaast on the App Store](https://apps.apple.com/app/id6818526484): download the app
 - [Home](https://faaastapp.com/): what the app does, timer styles, features, privacy, Pro and FAQ
 - [Support](https://faaastapp.com/support/): contact, restoring Pro, managing subscriptions, your data
 - [Privacy policy](https://faaastapp.com/privacy/): what data the app handles and where it goes
