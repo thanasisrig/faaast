@@ -531,3 +531,10 @@ p, dd, li { text-wrap: pretty; }
 .plan-p { white-space: nowrap; }
 @media (max-width: 900px) { .styles-lead { display: none; } .story-kicker { font-size: 18px; margin: -4px 0 10px; } }
 @media (max-width: 520px) { .plan { flex-direction: column; align-items: flex-start; gap: 6px; } .plan-p { text-align: left; } }
+
+/* Apple's official badge: unmodified artwork, 54px tall (Apple's minimum is 40px), clear space of a quarter of its height */
+.store-badge { display: inline-block; padding: 14px; margin: -14px; border-radius: 12px; line-height: 0; transition: transform .25s var(--ease), opacity .25s; }
+.store-badge img { height: 54px; width: auto; }
+.store-badge:hover { opacity: .85; }
+.store-badge:active { transform: scale(.97); }
+.store-badge:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
