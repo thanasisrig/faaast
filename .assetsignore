@@ -4,6 +4,4 @@
 .DS_Store
 wrangler.jsonc
 .assetsignore
-CNAME
-.nojekyll
 README.md
