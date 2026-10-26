@@ -1,7 +1,7 @@
 // Faaast website: draws the app's screens in HTML and drives them from the scroll.
 (() => {
   // Set this once the App Store listing is live; every [data-store] link points to it.
-  const APP_STORE_URL = 'https://apps.apple.com/app/id6818526484';
+  const APP_STORE_URL = 'https://apps.apple.com/app/apple-store/id6818526484?pt=129550437&ct=Website&mt=8';
 
   const GOAL = 16;
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
