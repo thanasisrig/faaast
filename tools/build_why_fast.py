@@ -28,7 +28,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, 'content', 'why-fast')
 OUT = os.path.join(ROOT, 'why-fast')
 SITE = 'https://faaastapp.com'
-STORE = 'https://apps.apple.com/app/id6818526484'
+STORE = 'https://apps.apple.com/app/apple-store/id6818526484?pt=129550437&amp;ct=Website&amp;mt=8'  # the site-wide App Store campaign link
 CATEGORIES = ['Basics', 'Routine', 'Science', 'Stories']
 
 NAV = f'''<header class="nav" id="nav">
