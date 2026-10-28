@@ -203,6 +203,8 @@ a { color: inherit; }
 .foot nav { display: flex; gap: 24px; }
 .foot nav a { text-decoration: none; color: var(--muted); }
 .foot nav a:hover { color: var(--ink); }
+.foot-badges { margin-top: 24px; }
+.foot-badges img { display: block; max-width: 100%; height: auto; }
 
 /* ---------- The app, drawn at 393 × 852 and scaled into each phone ---------- */
 .app { position: absolute; top: 0; left: 0; width: 393px; height: 852px; transform-origin: 0 0; transform: scale(var(--k, 1)); font-family: var(--font); color: var(--ink); background: var(--canvas); overflow: hidden; }
