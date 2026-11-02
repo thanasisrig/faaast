@@ -18,6 +18,19 @@ App Store: https://apps.apple.com/app/id6818526484
 - [What happens when you fast, hour by hour](https://faaastapp.com/guides/what-happens-when-you-fast/): the stages from 0 to 72+ hours with typical timings and cited sources (light ketosis around 18–24h; ketones cover about a quarter of brain energy by day 3.5; no autophagy timing claims)
 - [A fasting app without an account](https://faaastapp.com/guides/fasting-app-without-account/): how Faaast keeps data on the iPhone, importing history from other apps
 
+## Why fast (blog)
+
+Short articles, each summarising one trusted source (linked at the end of the article):
+
+- [Early time-restricted eating: does the time of day you eat matter?](https://faaastapp.com/why-fast/early-time-restricted-eating/): A controlled trial tested eating within six hours, finishing before 3 p.m., and found health benefits even without weight loss. Based on Cell Metabolism.
+- [How to start intermittent fasting when life is busy](https://faaastapp.com/why-fast/how-to-start-intermittent-fasting/): Practical tips from dietitians and nutritionists for fitting intermittent fasting around work, family and sleep. Based on Healthline.
+- [Intermittent fasting for women: hormones, timing and how to start](https://faaastapp.com/why-fast/intermittent-fasting-for-women/): How fasting can affect women's hormones, who should avoid it, and a gentle way to start, timed around your cycle. Based on Cleveland Clinic.
+- [Intermittent fasting and heart disease: the 91% study, explained](https://faaastapp.com/why-fast/intermittent-fasting-heart-disease-study/): In 2024, a headline linked eating within eight hours to a 91% higher risk of dying from heart disease. Here's why experts were sceptical. Based on Becker's Hospital Review.
+- [Does intermittent fasting help you lose weight? What a year-long trial found](https://faaastapp.com/why-fast/intermittent-fasting-weight-loss/): A year-long trial compared eating within an eight-hour window to cutting calories alone. Here's what it means for intermittent fasting and weight loss. Based on Harvard Health Publishing.
+- [Is intermittent fasting worth trying? Benefits, limits and how to ease in](https://faaastapp.com/why-fast/is-intermittent-fasting-worth-trying/): How intermittent fasting compares with other diets, what short-term trials show, and how to start slowly with realistic expectations. Based on Harvard Health Publishing.
+- [What is intermittent fasting, and how does it work?](https://faaastapp.com/why-fast/what-is-intermittent-fasting/): Intermittent fasting is about when you eat, not what. Here's how it works, the most common schedules, and who shouldn't try it. Based on Johns Hopkins Medicine.
+- [Why people try intermittent fasting: what a survey of 514 fasters found](https://faaastapp.com/why-fast/why-people-fast/): Weight loss, health or faith? A survey of 514 people who practise intermittent fasting shows why they started, which schedule they chose and how it went. Based on BMC Public Health.
+
 ## Who it's for
 
 - People new to fasting (start at 12:12, build up to 16:8)
