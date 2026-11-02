@@ -12,6 +12,10 @@ Each article is a Markdown file with a small header:
     date: 2026-10-23
     author: The Faaast team
     status: published            # published · sample · coming-soon
+    source_title: Title of the article this one summarises     (optional, all four)
+    source_publisher: Harvard Health Publishing
+    source_date: July 2022
+    source_url: https://...
     ---
     Body in Markdown: ## headings, paragraphs, - lists, 1. lists, > quotes,
     **bold**, *italic*, [links](url), citations[^1], and these blocks:
@@ -20,6 +24,8 @@ Each article is a Markdown file with a small header:
       [^1]: Source title, Publisher, Year. https://url   (listed under Sources)
 
 `coming-soon` articles appear as a card on the blog page without a link.
+With a source_* header, the article ends with an "Original article" box that
+links out to the article it summarises.
 `sample` articles get a banner saying they only show the layout.
 """
 import datetime, hashlib, html, json, os, re, sys
@@ -72,7 +78,7 @@ def parse(path):
     for line in m.group(1).splitlines():
         if ':' in line:
             k, v = line.split(':', 1)
-            meta[k.strip()] = v.split('#')[0].strip() if k.strip() != 'dek' else v.strip()
+            meta[k.strip()] = v.split(' #')[0].strip() if k.strip() not in ('dek', 'source_url') else v.strip()
     for key in ('title', 'dek', 'category', 'date', 'status'):
         if not meta.get(key):
             sys.exit(f'{path}: header needs "{key}"')
@@ -226,6 +232,7 @@ def article_page(a, others):
         'author': {'@type': 'Organization', 'name': a['author'] if a['author'] != 'The Faaast team' else 'Faaast', 'url': SITE + '/'},
         'publisher': {'@type': 'Organization', 'name': 'Faaast', 'logo': {'@type': 'ImageObject', 'url': SITE + '/img/icon.png'}},
         'image': SITE + '/img/og.png', 'articleSection': a['category'],
+        **({'isBasedOn': {'@type': 'CreativeWork', 'name': a['source_title'], 'url': a['source_url'], 'publisher': {'@type': 'Organization', 'name': a['source_publisher']}}} if a.get('source_url') else {}),
         **({'citation': [re.search(r'https?://\S+', s).group(0) for _, s in sources if re.search(r'https?://\S+', s)]} if sources else {}),
     }, {
         '@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
@@ -244,6 +251,12 @@ def article_page(a, others):
             label = html.escape(s[:m.start()].strip().rstrip('.'))
             return f'<a href="{m.group(0)}" rel="noopener">{label}</a>'
         src_html = '<section class="wf-sources"><h2 id="sources">Sources</h2><ol>' + ''.join(f'<li id="src-{k}">{fmt(s)}</li>' for k, s in sources) + '</ol></section>'
+    original = ''
+    if a.get('source_url'):
+        original = (f'<aside class="wf-original"><p class="wf-original-k">Original article</p>'
+                    f'<p>This is a short summary of <a href="{html.escape(a["source_url"])}" target="_blank" rel="noopener">{html.escape(a["source_title"])}</a>'
+                    f', {html.escape(a["source_publisher"])}{", " + html.escape(a["source_date"]) if a.get("source_date") else ""}. '
+                    f'Read the original for the full details.</p></aside>')
     sample = '<p class="wf-sample">Sample article. It shows how a Why fast article looks, and isn’t published.</p>' if a['status'] == 'sample' else ''
     related = [o for o in others if o['slug'] != a['slug'] and o['status'] != 'coming-soon'][:3]
     related_html = ''
@@ -266,6 +279,7 @@ def article_page(a, others):
   <div class="wf-body">
     {toc}
     {body}
+    {original}
     <aside class="g-cta wf-cta">
       <img src="/img/icon.png" alt="" width="56" height="56">
       <div><b>Find your fasting rhythm</b><p>Faaast is free on iPhone. No account, no ads.</p></div>

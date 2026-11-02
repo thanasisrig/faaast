@@ -618,6 +618,11 @@ a.wf-card:hover .wf-cover i::after { transition: height .6s var(--ease); }
 .wf-sources ol { font-size: 15px; line-height: 1.55; color: var(--muted); padding-left: 22px; }
 .wf-sources li { scroll-margin-top: 96px; }
 .wf-sources a { color: var(--ink); font-weight: 500; }
+.wf-original { margin: 36px 0 0; padding: 18px 20px; border: 1px solid var(--line); border-radius: 16px; }
+.wf-original p { margin: 0 !important; font-size: 16px !important; line-height: 1.55; }
+.wf-original .wf-original-k { margin-bottom: 6px !important; font-size: 13px !important; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.wf-original a { color: var(--ink); font-weight: 600; }
+.wf-original a::after { content: " ↗"; font-weight: 400; }
 .wf-medical { margin: 32px 0 0 !important; padding-top: 18px; border-top: 1px solid var(--line); font-size: 14px !important; line-height: 1.55; color: var(--muted); }
 .wf-related { margin-top: 96px; padding: 80px 0 110px; background: #ECECEC; }
 .wf-related h2 { margin: 0 0 28px; font-size: clamp(28px, 3vw, 36px); letter-spacing: -.03em; }
